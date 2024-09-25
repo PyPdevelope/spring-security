@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Page</title>
+</head>
+<body>
+<h1>Employee Page</h1>
+<p>This page is accessible to employees, managers, and admins.</p>
+
+<h2>Employee List</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Department</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.name}">John Doe</td>
+        <td th:text="${employee.position}">Developer</td>
+        <td th:text="${employee.department}">IT</td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/">Home</a>
+<a href="/logout">Logout</a>
+</body>
+</html>
